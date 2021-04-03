@@ -38,7 +38,7 @@
                         Margin="5" />
                 <Button Grid.Column="3"
                         Click="SetHosts"
-                        Content="设置为hosts"
+                        Content="使用此IP"
                         Margin="5" />
             </Grid>
         </DataTemplate>
