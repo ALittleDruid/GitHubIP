@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Net.NetworkInformation;
 using System.Windows.Data;
@@ -16,18 +16,15 @@ namespace GitHubIP.Converter
                 {
                     return "正在Ping...";
                 }
-                else
+                if (values[1] is PingReply pingReply)
                 {
-                    if (values[1] is PingReply pingReply)
+                    if (pingReply.Status == IPStatus.Success)
                     {
-                        if (pingReply.Status == IPStatus.Success)
-                        {
-                            return $"{pingReply.RoundtripTime} ms";
-                        }
-                        return pingReply.Status.ToString();
+                        return $"{pingReply.RoundtripTime} ms";
                     }
-                    return "待Ping";
+                    return pingReply.Status.ToString();
                 }
+                return "待Ping";
             }
             return "Error";
         }
