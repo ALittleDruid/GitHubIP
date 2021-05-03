@@ -56,7 +56,8 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <ListView Margin="10"
+        <ListView x:Name="ips"
+                  Margin="10"
                   FontSize="30"
                   HorizontalContentAlignment="Stretch"
                   ItemsSource="{Binding IPList}"

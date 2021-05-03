@@ -109,6 +109,7 @@ namespace GitHubIP
         {
             if (sender is Button b && b.DataContext is IPInfo ipInfo)
             {
+                ips.SelectedItem = ipInfo;
                 var lines = await File.ReadAllLinesAsync(hosts);
                 var list = lines.ToList();
                 bool find = false;
